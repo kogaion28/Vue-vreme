@@ -1,20 +1,31 @@
 <template>
+  
+
+
+  <!-- Daca temperatura trece de 16 grade pune poza cald 
+        Bara de cautare ----
+  -->
+
   <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'cald' : ''">
 
     <main>
-      <div class="search-box">
+      <div class="cutie-cautare">
         <input 
           type="text" 
           class="bara-cautar" 
-          placeholder="Cauta Locatia"
+          placeholder="Introduceti Locatia"
           v-model="query"
           @keypress="fetchWeather"
         />
       </div>
+       
+       
+       
+       
        <!-- <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp >  ? 'ploios' : ''">
 
     <main>
-      <div class="search-box">
+      <div class="cutie-cautare">
         <input 
           type="text" 
           class="bara-cautar" 
@@ -111,12 +122,12 @@ main {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
 }
 
-.search-box {
+.cutie-cautare {
   width: 100%;
   margin-bottom: 30px;
 }
 
-.search-box .bara-cautar {
+.cutie-cautare .bara-cautar {
   display: block;
   width: 100%;
   padding: 15px;
@@ -135,7 +146,7 @@ main {
   transition: 0.4s;
 }
 
-.search-box .bara-cautar:focus {
+.cutie-cautare .bara-cautar:focus {
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 16px 0px 16px 0px;
