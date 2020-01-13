@@ -1,5 +1,6 @@
 <template>
-  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
+  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'cald' : ''">
+
     <main>
       <div class="search-box">
         <input 
@@ -10,6 +11,18 @@
           @keypress="fetchWeather"
         />
       </div>
+       <!-- <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp >  ? 'ploios' : ''">
+
+    <main>
+      <div class="search-box">
+        <input 
+          type="text" 
+          class="bara-cautar" 
+          placeholder="Cauta Locatia"
+          v-model="query"
+          @keypress="fetchWeather"
+        />
+      </div> -->
 
       <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
         <div class="cutie-vreme">
@@ -17,7 +30,7 @@
           <div class="date">{{ dateBuilder() }}</div>
         </div>
 
-        <div class="weather-box">
+        <div class="vreme-cutie">
           <div class="temp">{{ Math.round(weather.main.temp) }}°c</div>
           <div class="weather">{{ weather.weather[0].main }}</div>
         </div>
@@ -77,14 +90,18 @@ body {
 }
 
 #app {
-  background-image: url('./assets/rece.jpg');
+  background-image: url('./assets/vreme-rece.jpeg');
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
 }
 
-#app.warm {
+#app.cald {
   background-image: url('./assets/cald.jpg');
+}
+
+#app.ploios{
+  background-image: url('./assets/ploaie.jpg')
 }
 
 main {
@@ -140,11 +157,11 @@ main {
   text-align: center;
 }
 
-.weather-box {
+.vreme-cutie {
   text-align: center;
 }
 
-.weather-box .temp {
+.vreme-cutie .temp {
   display: inline-block;
   padding: 10px 25px;
   color: #FFF;
@@ -159,7 +176,7 @@ main {
   box-shadow: 3px 6px rgba(0, 0, 0, 0.25);
 }
 
-.weather-box .weather {
+.vreme-cutie .weather {
   color: #FFF;
   font-size: 48px;
   font-weight: 700;
