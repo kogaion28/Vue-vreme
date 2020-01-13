@@ -4,15 +4,15 @@
       <div class="search-box">
         <input 
           type="text" 
-          class="search-bar" 
-          placeholder="Search..."
+          class="bara-cautar" 
+          placeholder="Cauta Locatia"
           v-model="query"
           @keypress="fetchWeather"
         />
       </div>
 
       <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
-        <div class="location-box">
+        <div class="cutie-vreme">
           <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
           <div class="date">{{ dateBuilder() }}</div>
         </div>
@@ -51,8 +51,8 @@ export default {
     },
     dateBuilder () {
       let d = new Date();
-      let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      let months = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iune", "Iulie", "August", "Septembrie", "Octobrie", "Noiembrie", "Decembrie"];
+      let days = ["Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata", "Duminica"];
 
       let day = days[d.getDay()];
       let date = d.getDate();
@@ -99,7 +99,7 @@ main {
   margin-bottom: 30px;
 }
 
-.search-box .search-bar {
+.search-box .bara-cautar {
   display: block;
   width: 100%;
   padding: 15px;
@@ -118,13 +118,13 @@ main {
   transition: 0.4s;
 }
 
-.search-box .search-bar:focus {
+.search-box .bara-cautar:focus {
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 16px 0px 16px 0px;
 }
 
-.location-box .location {
+.cutie-vreme .location {
   color: #FFF;
   font-size: 32px;
   font-weight: 500;
@@ -132,7 +132,7 @@ main {
   text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
 }
 
-.location-box .date {
+.cutie-vreme .date {
   color: #FFF;
   font-size: 20px;
   font-weight: 300;
