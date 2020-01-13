@@ -77,14 +77,14 @@ body {
 }
 
 #app {
-  background-image: url('./assets/cold-bg.jpg');
+  background-image: url('./assets/rece.jpg');
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
 }
 
 #app.warm {
-  background-image: url('./assets/warm-bg.jpg');
+  background-image: url('./assets/cald.jpg');
 }
 
 main {
