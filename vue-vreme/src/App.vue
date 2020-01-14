@@ -2,12 +2,12 @@
   
 
 
-  <!-- Daca temperatura trece de 16 grade pune poza cald 
+  <!-- Daca temperatura trece de 16 grade pune poza cald.jpg 
         Bara de cautare ----
   -->
 
-  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'cald' : ''">
-
+  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'cald' : ''" >
+    
     <main>
       <div class="cutie-cautare">
         <input 
@@ -22,18 +22,9 @@
        
        
        
-       <!-- <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp >  ? 'ploios' : ''">
+        
 
-    <main>
-      <div class="cutie-cautare">
-        <input 
-          type="text" 
-          class="bara-cautar" 
-          placeholder="Cauta Locatia"
-          v-model="query"
-          @keypress="fetchWeather"
-        />
-      </div> -->
+    
 
       <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
         <div class="cutie-vreme">
